@@ -1,0 +1,25 @@
+.register {
+  max-width: 400px;
+  margin: var(--margin-l) auto;
+}
+
+.register__h1 {
+  text-align: center;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+}
+
+.register__email-container {
+  display: flex;
+  align-items: center;
+}
+
+.register__email {
+  flex: 1;
+  margin-right: var(--margin-l) !important;
+}
