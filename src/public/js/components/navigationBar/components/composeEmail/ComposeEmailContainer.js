@@ -6,7 +6,7 @@ const { EMAIL_LIMIT } = require("../../../inbox/config");
 const {
   ShowComposeEmail,
   ResetForm,
-  SetFormField
+  SetFormField,
 } = require("../../../navigationBar/components/composeEmail/composeEmailActions");
 const EmailOverview = require("../navigationList/EmailOverview");
 const { SetEmailOverview } = require("../navigationList/navigationListActions");
@@ -20,24 +20,24 @@ const RemoveEmailRequest = require("./utils/RemoveEmailRequest");
 const emailWasStarted = require("./utils/emailWasStarted");
 const formFieldsChanged = require("./utils/formFieldChanged");
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     pathname: state.navigationList.pathname,
     open: state.composeEmail.show,
     originalForm: state.composeEmail.originalForm,
-    form: state.composeEmail.form
+    form: state.composeEmail.form,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onRecipientsChange: event => {
+    onRecipientsChange: (event) => {
       dispatch(SetFormField("recipients", event.target.value));
     },
-    onSubjectChange: event => {
+    onSubjectChange: (event) => {
       dispatch(SetFormField("subject", event.target.value));
     },
-    onMessageChange: event => {
+    onMessageChange: (event) => {
       dispatch(SetFormField("message", event.target.value));
     },
     async onCancel(originalForm, form, pathname) {
@@ -120,7 +120,7 @@ const mapDispatchToProps = dispatch => {
     onError: (title, errorMessage) => {
       return dispatch(ShowAlert(title, errorMessage));
     },
-    onEmailSent: async pathname => {
+    onEmailSent: async (pathname) => {
       const title = "Email sent";
       const text = "Email was sent successfully";
       dispatch(ShowAlert(title, text));
@@ -147,7 +147,7 @@ const mapDispatchToProps = dispatch => {
         return dispatch(ShowAlert(title, text));
       }
     },
-    onDraftSent: async pathname => {
+    onDraftSent: async (pathname) => {
       try {
         const response = await fetch(Paths.api.overview);
         const json = await response.json();
@@ -169,7 +169,7 @@ const mapDispatchToProps = dispatch => {
         const text = error.message;
         return dispatch(ShowAlert(title, text));
       }
-    }
+    },
   };
 };
 

@@ -14,6 +14,7 @@ class InboxRow extends React.Component {
   onClick(event) {
     if (this.props.email.type === "draft") {
       event.preventDefault();
+
       this.props.onDraftClick(this.props.email);
     }
   }

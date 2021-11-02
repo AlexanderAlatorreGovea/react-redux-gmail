@@ -9,7 +9,7 @@ const InboxRow = require("./InboxRow");
 const mapStateToProps = state => {
   return {};
 };
-
+ 
 const mapDispatchToProps = dispatch => {
   return {
     onDraftClick: email => {

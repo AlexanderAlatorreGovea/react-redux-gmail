@@ -15,7 +15,7 @@ class AppComponent extends React.Component {
 
   async componentDidMount() {
     const options = {
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
     };
     const response = await fetch(Paths.api.isLoggedIn, options);
 
