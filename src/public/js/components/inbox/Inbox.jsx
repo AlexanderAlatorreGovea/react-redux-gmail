@@ -4,7 +4,7 @@ const TableBody = require("@material-ui/core/TableBody").default;
 const InboxRow = require("./components/inboxRow/InboxRowContainer");
 
 class Inbox extends React.Component {
-  constructor(props) {
+  constructor(props) { 
     super(props);
   }
 

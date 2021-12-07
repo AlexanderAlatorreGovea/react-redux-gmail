@@ -32,11 +32,11 @@ const mapStateToProps = (state, { location }) => {
 }; 
 
 const mapDispatchToProps = dispatch => {
-  return {
+  return { 
     onSearch: () => dispatch(QueryWasMade(false)),
     fetchEmails: async (lastPathname, pathname, emailOffset, query) => {
       dispatch(SetLocation(pathname));
-      try {
+      try { 
         let offset; 
         if (lastPathname === pathname) {
           offset = emailOffset;
@@ -44,7 +44,7 @@ const mapDispatchToProps = dispatch => {
         } else {
           offset = 0;
           dispatch(SetLastEmailOffset(offset));
-        }
+        } 
         const promise = fetchEmails(pathname, offset, EMAIL_LIMIT);
         const promise2 = fetch(Paths.api.overview);
         const promise3 = fetch(Paths.api.emailCount(emailType, query));

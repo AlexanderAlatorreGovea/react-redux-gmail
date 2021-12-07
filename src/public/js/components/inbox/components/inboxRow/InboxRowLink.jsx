@@ -6,9 +6,9 @@ const InboxRowLink = ({ content, emailId, onClick }) => {
   return (
     <Link
       className="link inbox__link"
-      onClick={onClick}
+      onClick={onClick} 
       to={Paths.email(emailId)}
-    >
+    > 
       {content}
     </Link>
   );

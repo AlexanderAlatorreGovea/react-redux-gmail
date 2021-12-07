@@ -1,8 +1,8 @@
 const formatTimestamp = require("../../../utils/formatTimestamp");
 
-const InboxEmail = incomingEmail => {
-  const id = incomingEmail._id || "";
+const InboxEmail = (incomingEmail) => {
   let maybeRecipients;
+  const id = incomingEmail._id || "";
   const subject = incomingEmail.subject || "";
   const body = incomingEmail.message || "";
   const viewedAt = incomingEmail.viewedAt || "";
@@ -32,7 +32,7 @@ const InboxEmail = incomingEmail => {
     type,
     recipients: maybeRecipients,
     viewedAt,
-    timestamp: maybeTimestamp
+    timestamp: maybeTimestamp,
   };
 };
 

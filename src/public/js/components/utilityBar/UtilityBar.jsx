@@ -15,7 +15,7 @@ class UtilityBar extends React.Component {
     this.props.onPrevious(this.props.rangeStart, this.props.pathname);
   }
 
-  onNext() {
+  onNext() { 
     this.props.onNext(
       this.props.rangeStart,
       this.props.totalEmails,
