@@ -21,11 +21,11 @@ class AppComponent extends React.Component {
 
     if (!response.ok && response.status === 401) {
       this.props.history.push(Paths.login);
-    } else {
-      const json = await response.json();
-      this.props.onShow(json);
-      this.setState({ show: true });
     }
+
+    const json = await response.json();
+    this.props.onShow(json);
+    this.setState({ show: true });
   }
 
   render() {
@@ -47,9 +47,9 @@ class AppComponent extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return null; //TODO: add a loading screen?
     }
+
+    return null; 
   }
 }
 

@@ -1,4 +1,4 @@
-const formatTimestamp = timestamp => {
+const formatTimestamp = (timestamp) => {
   const isoString = new Date(timestamp).toISOString();
   const array = isoString.split("T");
   const date = array[0];

@@ -3,15 +3,15 @@ const AppComponent = require("./AppComponent.jsx");
 const { SetUser } = require("../login/loginActions");
 const User = require("../login/User");
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onShow: json => {
+    onShow: (json) => {
       dispatch(SetUser(User(json)));
-    }
+    },
   };
 };
 
